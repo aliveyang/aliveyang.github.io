@@ -1,6 +1,6 @@
 +++
 Tags = ["db"]
-date = "2021-01-01"
+date = "2021-01-02"
 title = "ADB-PG"
 +++
 **阿里 AnalyticDB PostgreSQL版**
