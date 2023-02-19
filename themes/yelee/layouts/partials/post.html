@@ -1,0 +1,287 @@
+<article id="post-js-android" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    <div class="article-meta">
+        <a href="{{ .Permalink }}" class="article-date">
+            <time datetime="{{.Date}}" itemprop="datePublished">{{ .Date.Format "2006-01-02" }}</time>
+        </a>
+    </div>
+
+    <div class="article-inner">
+        {{ if $.Site.Params.fancybox}}
+        <input type="hidden" class="isFancy">
+        {{ end }}
+
+        <header class="article-header">
+
+
+            <h1 class="article-title" itemprop="name">
+                <a class="article-title" href="{{ .Permalink }}">{{ .Title }}</a>
+            </h1>
+
+
+        </header>
+
+        <div class="article-info article-info-post">
+
+            {{ if .Params.categories }}
+            <div class="article-category tagcloud">
+                {{ range .Params.categories }}
+                <a class="article-category-link" href="/categories/{{.|lower}}/" style="font-size: 12px;">{{.}}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.tags }}
+            <div class="article-tag tagcloud">
+                <ul class="article-tag-list">
+                    {{ range .Params.tags }}
+                    <li class="article-tag-list-item">
+                        <a class="article-tag-list-link color1" href="/tags/{{.|lower}}/"
+                           style="font-size: 12px;">{{.}}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            <div class="clearfix"></div>
+        </div>
+
+
+        <div class="article-entry" itemprop="articleBody">
+
+            {{.Content}}
+
+        </div>
+
+    </div>
+
+    {{ if eq .Type "post" }}
+    <nav id="article-nav">
+
+        {{ with .NextInSection }}
+        <div id="article-nav-newer" class="article-nav-title">
+            <a href="{{.RelPermalink}}">
+                {{.Title}}
+            </a>
+        </div>
+        {{ else }}
+        {{ end }}
+
+        {{ with .PrevInSection }}
+        <div id="article-nav-older" class="article-nav-title">
+            <a href="{{.RelPermalink}}">
+                {{.Title}}
+            </a>
+        </div>
+        {{ else }}
+        {{ end }}
+
+    </nav>
+    {{ end }}
+
+
+</article>
+
+<div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc">
+        {{ .TableOfContents }}
+    </ol>
+</div>
+
+<style>
+    {{ if eq .Type "post" }}
+    .left-col .switch-btn {
+        display: none;
+    }
+
+    .left-col .switch-area {
+        display: none;
+    }
+    {{ else }}
+
+    #tocButton{
+        display: none;
+    }
+    #toc{
+        display: none;
+    }
+
+    {{ end }}
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        #mobileAd {
+            width: 100%;
+            height: 250px;
+        }
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        #musicAd {
+            width: 100%;
+        }
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<!--<script src="//cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>-->
+<!--<script src="//cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function () {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        } else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    // if ($(".toc").length < 1) {
+    //     $("#toc, #tocButton").show();
+    //     $(".switch-btn, .switch-area").hide();
+    // $(".switch-btn, .switch-area").show();
+    // }
+</script>
+
+
+<div class="share" style="display: none">
+</div>
+
+<!-- disqus评论模块 -->
+<!--<div id="disqus_thread"></div>-->
+<!--<script type="text/javascript">-->
+
+<!--    (function() {-->
+<!--        // Don't ever inject Disqus on localhost&#45;&#45;it creates unwanted-->
+<!--        // discussions from 'localhost:1313' on your Disqus account...-->
+<!--        // if (window.location.hostname == "localhost")-->
+<!--        //     return;-->
+
+<!--        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+<!--        var disqus_shortname = '{{ .Site.DisqusShortname }}';-->
+<!--        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+<!--        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+<!--    })();-->
+<!--</script>-->
+<!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!--<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+
+<!-- gitment评论模块-->
+<!--<div id="git-comments"></div>-->
+<!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+<!--<script>-->
+<!--    var gitment = new Gitment({-->
+<!--        id: location.href,  // 可选, 默认为 location.href-->
+<!--        owner: '{{ .Site.Params.gitment.owner }}',-->
+<!--        repo: '{{ .Site.Params.gitment.repo }}',-->
+<!--        oauth: {-->
+<!--            client_id: '{{ .Site.Params.gitment.client_id }}',-->
+<!--            client_secret: '{{ .Site.Params.gitment.client_secret }}',-->
+<!--        }-->
+<!--    })-->
+<!--    gitment.render('git-comments')-->
+<!--</script>-->
+
+<!--{{ if (.Site.Params.gitment) }}-->
+<!--<div id="gitment-ctn"></div>-->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">-->
+<!--<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>-->
+<!--<script>-->
+<!--    var gitalk = new Gitalk({-->
+<!--        clientID: '{{ .Site.Params.gitment.client_id }}', //Client ID-->
+<!--        clientSecret: '{{ .Site.Params.gitment.client_secret }}', //Client Secret-->
+<!--        repo: '{{ .Site.Params.gitment.repo }}',//仓库名称-->
+<!--        owner: '{{ .Site.Params.gitment.owner }}',//仓库拥有者-->
+<!--        admin: ['{{ .Site.Params.gitment.owner }}'],-->
+<!--        id: location.href,      // Ensure uniqueness and length less than 50-->
+<!--        distractionFreeMode: false  // Facebook-like distraction free mode-->
+<!--    })-->
+<!--    gitalk.render('gitment-ctn')-->
+<!--{{ end }}-->
+
+<!--评论模块结束-->
+
+
+{{ if eq .Type "post" }}
+<div class="scroll" id="post-nav-button">
+
+    {{ with .NextInSection }}
+    <a href="{{.RelPermalink}}" title="上一篇: {{.Title}}">
+        <i class="fa fa-angle-left"></i>
+    </a>
+    {{ else }}
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    {{ end }}
+
+
+    <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+
+    {{ with .PrevInSection }}
+    <a href="{{.RelPermalink}}" title="下一篇: {{.Title}}">
+        <i class="fa fa-angle-right"></i>
+    </a>
+    {{ else }}
+    {{ end }}
+
+</div>
+{{ end }}
+
+<ul class="post-list toc-article">
+    <!--{{/* range where (where $.Site.Pages.ByDate.Reverse "Section" "post") "IsNode" false */}}-->
+    {{ range where (where .Site.Pages "Type" "post").ByDate.Reverse "Kind" "page" }}
+    <li class="post-list-item"><a class="post-list-link" href="{{.RelPermalink}}" target="_Self">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+
+<!--<script src="//cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>>-->
+<!--<script src="//cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>>-->
+<script>
+    $(".post-list").addClass("toc-article");
+    $(".post-list-item a").attr("target", "_Self");
+    $("#post-nav-button > a:nth-child(2)").click(function () {
+        $(".fa-bars, .fa-times").toggle();
+        $(".post-list").toggle(300);
+        if ($(".toc").length > 0) {
+            $("#toc, #tocButton").toggle(200, function () {
+                if ($(".switch-area").is(":visible")) {
+                    $("#toc, .switch-btn, .switch-area").toggle();
+                    $("#tocButton").attr("value", valueHide);
+                }
+            })
+        } else {
+            $(".switch-btn, .switch-area").fadeToggle(300);
+        }
+    })
+</script>
+
+<script>
+    (function($){
+        setInterval(() => {
+            $.each($('iframe'), (arr,x) => {
+                let src = $(x).attr('src');
+                if (src == undefined) {
+                    $(x).remove();
+                }
+            });
+        }, 300);
+    })(jQuery);
+</script>
+
+<script>
+
+</script>
+

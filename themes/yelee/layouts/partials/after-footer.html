@@ -1,0 +1,35 @@
+
+<script src="/js/GithubRepoWidget.js"></script>
+<!--<script src="//cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>>-->
+<!--<script src="//cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>>-->
+<script src="/js/main.js"></script>
+
+{{partial "background.html" .}}
+{{partial "google-analytics.html" .}}
+
+{{ if $.Site.Params.mathjax }}
+    {{partial "mathjax.html" .}}
+{{ end }}
+
+{{partial "scrolling-button.html" .}}
+
+{{ if $.Site.Params.jquery_ui }}
+<script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+{{ end }}
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
