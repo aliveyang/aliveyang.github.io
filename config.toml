@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "alive yang"
 theme="yelee"
 disqusShortname = "aliveyang"
+ignoreFiles = ["draft.md", "private.md", "我的模板.md"]

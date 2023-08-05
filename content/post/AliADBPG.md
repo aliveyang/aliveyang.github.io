@@ -1,5 +1,5 @@
 +++
-Tags = ["db"]
+tags = ["db"]
 date = "2021-01-02"
 title = "ADB-PG"
 +++

@@ -1,5 +1,5 @@
 +++
-Tags = ["hugo"]
+tags = ["hugo"]
 date = "2019-06-15"
 title = "Welcome"
 +++
@@ -97,8 +97,12 @@ hugo -D
 
 ---
 
-测试
+音视测试
 ---
+
+{{< music "music.163.com/outchain/player?type=2&id=1387564796&auto=1&height=66" left >}}
+
+{{< youtube w7Ft2ymGmfc >}}
 
 {{< video "www.youtube.com/embed/w7Ft2ymGmfc" >}}
 

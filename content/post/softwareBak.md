@@ -1,5 +1,5 @@
 +++
-Tags = ["win"]
+tags = ["win"]
 date = "2021-01-01"
 title = "Win备忘"
 +++
