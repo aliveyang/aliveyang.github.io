@@ -1787,8 +1787,8 @@ a {
 .article-entry ul li:before {
     display: inline-block;
     content: "";
-    width: 0.4em;
-    height: 0.4em;
+    width: 0.3em;
+    height: 0.3em;
     margin-right: 0.5em;
     margin-bottom: 0.11em;
     border: 1px solid #d3d3d3;
@@ -1798,13 +1798,13 @@ a {
 
 .article-entry ul,
 .article-entry ol {
-    font-size: 14px;
-    margin: 10px 0px;
+    font-size: 13px;
+    margin: 8px 0px;
 }
 
 .article-entry li ul,
 .article-entry li ol {
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .article-entry li ul li:before,
@@ -1815,6 +1815,7 @@ a {
 
 .article-entry h1 {
     margin-top: 30px;
+    color: #ba8f6c;
 }
 
 .article-entry h2 {
@@ -2521,7 +2522,7 @@ li:hover {
 
 .article-entry pre,
 .article-entry .highlight {
-    background: rgba(51, 51, 51, 0.85);
+    background: rgba(246, 244, 244, 0.85);
     margin: auto;
     padding: 0.35em 1.5em;
     border-style: solid;
@@ -2661,13 +2662,11 @@ li:hover {
 }
 
 .article-entry code {
-    color: #808080;
-    background: rgba(248, 237, 223, 0.5);
+    color: #624242;
     padding: 0.05em 0.3em;
     border-radius: 3px;
     var: 1;
-    color: #fff;
-    background: rgba(153, 204, 153, 0.7);
+    background: rgba(237, 252, 237, 0.7);
 }
 
 pre .comment,
@@ -3494,6 +3493,7 @@ body {
 
 .tagcloud a {
     opacity: 0.9;
+    background: #ff945c;
 }
 
 #header .header-nav .social li {
