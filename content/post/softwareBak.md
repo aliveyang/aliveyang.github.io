@@ -24,6 +24,8 @@ title = "Win备忘"
 - clash客户端 https://github.com/zzzgydi/clash-verge
 - AltSnap 窗口工具置顶 https://github.com/RamonUnch/AltSnap
 - TrafficMonitor 任务栏网速 https://github.com/zhongyang219/TrafficMonitor
+- 音轨分离工具（人声背景分离） https://github.com/boy1dr/SpleeterGui
+- 老照片修复 https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
 ### 其他
 > tg群组 https://github.com/jackhawks/telegram-groups
     
