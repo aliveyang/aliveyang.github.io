@@ -50,7 +50,7 @@ git clone https://github.com/NightFarmer/hugo-theme-yelee.git
 
 myblog 目录下 config.toml 修改
 ```
-baseurl = "http://bolg.aliveyang.top/"
+baseurl = "http://aliveyang.github.io/"
 languageCode = "en-us"
 title = "Fang Yang"
 theme = "hugo-theme-yelee"
