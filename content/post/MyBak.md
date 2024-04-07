@@ -19,7 +19,7 @@ title = "备份录"
 - 思维导图 [Xmind](https://xmind.app/)
 - 邮件 [Foxmail](https://www.foxmail.com/)
 - 绘图-流程图 [draw.io](https://draw.io)
-- 快捷查询 [Listary](https://www.listary.com/) [uTool](https://www.u.tools/)
+- 快捷查询 [Listary](https://www.listary.com/) [uTool](https://www.u.tools/) [Quicker](https://getquicker.net/)
 - VPN [v2rayN](https://github.com/2dust/v2rayN) [clash-verge](https://github.com/zzzgydi/clash-verge)
 - 格式转换 [FileConverter](https://github.com/Tichau/FileConverter)
 - 窗口工具置顶 [AltSnap](https://github.com/RamonUnch/AltSnap)
