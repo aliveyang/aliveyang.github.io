@@ -1,7 +1,7 @@
 +++
 tags = ["hugo"]
 date = "2019-06-15"
-title = "Welcome"
+title = "Welcome hugo"
 +++
 **hugo基础使用** 
 <!--more-->

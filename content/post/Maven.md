@@ -1,5 +1,5 @@
 +++
-tags = ["java"]
+tags = ["maven"]
 date = "2020-02-04"
 title = "Maven"
 +++

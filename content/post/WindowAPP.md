@@ -1,9 +1,9 @@
 +++
-tags = ["win"]
+tags = ["app", "window"]
 date = "2021-01-01"
-title = "备份录"
+title = "window app"
 +++
-**Win备忘**
+**window 设置备忘**
 <!--more-->
       
 ### 微软拼音输入法配置
@@ -26,9 +26,7 @@ title = "备份录"
 - 任务栏网速 [TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor)
 - 音轨分离工具（人声背景分离） [SpleeterGui](https://github.com/boy1dr/SpleeterGui)
 - 老照片修复 [Bringing-Old-Photos-Back-to-Life](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life)
-### Android
-- [GKD自定义屏幕点击](https://github.com/gkd-kit/gkd)
-- 
-
 ### 其他
+- [MusicFree](https://github.com/maotoumao/MusicFreeDesktop)
+- 
     
