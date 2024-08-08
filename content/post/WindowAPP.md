@@ -10,10 +10,11 @@ title = "window app"
     关闭 按键> 热键> 简繁转换
     词库和自学习> 用户定义的短语> 添加> “拼音 sj  短语 %yyyy%%MM%%dd%%HH%%mm%%ss%
 ### PC软件备忘
+- windows软件包管理 [UniGetUI](https://www.marticliment.com/unigetui/)
 - PDF阅读笔记 [BookxNote](http://www.bookxnote.com/)
 - PDF阅读器 [sumatrapdf](https://www.sumatrapdfreader.org/free-pdf-reader)
 - Redis客户端 [AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager) [tinycraft](https://redis.tinycraft.cc/)
-- 局域网互传文件 [LANDrop](https://github.com/LANDrop/LANDrop)
+- 局域网互传文件 [localsend](https://localsend.org/) [PairDrop](https://pairdrop.net/) [LANDrop](https://github.com/LANDrop/LANDrop)
 - 数据库客户端 [DBeaver](https://dbeaver.io/)
 - 终端工具 [WindTerm](https://github.com/kingToolbox/WindTerm/releases)
 - 思维导图 [Xmind](https://xmind.app/)
