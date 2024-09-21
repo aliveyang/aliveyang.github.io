@@ -806,7 +806,7 @@ a {
 @keyframes profilepic {
     0% {
         right: 4px;
-        top: 1x;
+        top: 1px;
     }
     100% {
         right: 0px;
