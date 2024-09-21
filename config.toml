@@ -2,5 +2,7 @@ baseURL = "https://aliveyang.github.io/"
 languageCode = "en-us"
 title = "alive yang"
 theme="yelee"
-disqusShortname = "aliveyang"
+#disqusShortname = "aliveyang"
+[services.disqus]
+shortname = "aliveyang"
 ignoreFiles = ["draft.md", "private.md", "我的模板.md"]

@@ -7,7 +7,7 @@
     <div class="mid-col">
         {{partial "mobile-nav.html" .}}
         <div class="body-wrap">
-            {{ $tag := .Params.title }}
+            {{ $tag := .Data.Term }}
             {{ $pages := .Site.RegularPages }}
             {{ if $tag }}
                 {{ $pages = where $pages "Params.tags" "intersect" (slice $tag) }}
