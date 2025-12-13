@@ -194,15 +194,10 @@ jobs:
 
 ---
 
-**Shortcode 示例**
+**Shortcode 测试**
 
-```markdown
-# 音乐（网易云外链可能失效）
-{{< music "music.163.com/outchain/player?type=2&id=xxx" left >}}
+{{< music "music.163.com/outchain/player?type=2&id=1387564796&auto=1&height=66" left >}}
 
-# YouTube
 {{< youtube w7Ft2ymGmfc >}}
 
-# Bilibili
 {{< bilibili 648902166 >}}
-```
