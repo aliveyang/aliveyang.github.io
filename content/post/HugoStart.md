@@ -153,40 +153,22 @@ jobs:
 - `main` 分支：构建后的静态文件
 - 推送到 `dev` 自动触发部署
 
-## 图片优化
-
-使用懒加载 shortcode
-```markdown
-{{< img src="/img/head-portrait.jpg" alt="描述" caption="说明" >}}
-```
-
-## 主题 Shortcodes
-
-```markdown
-# 音乐
-{{< music "music.163.com/outchain/player?type=2&id=xxx&auto=1&height=66" right >}}
-
-# YouTube
-{{< youtube VIDEO_ID >}}
-
-# 视频
-{{< video "www.youtube.com/embed/VIDEO_ID" >}}
-
-# Bilibili（支持 BV 号和 aid）
-{{< bilibili BV1e44y1i7Kt >}}
-{{< bilibili 648902166 >}}
-```
-
 ## 参考
 - [Hugo 官方文档](https://gohugo.io/documentation/)
 - [Yelee 主题](https://github.com/NightFarmer/hugo-theme-yelee)
 
 ---
 
-**Shortcode 测试**
+## Shortcode 测试
 
+### 音乐播放器
 {{< music "music.163.com/outchain/player?type=2&id=1387564796&auto=1&height=66" left >}}
 
-{{< youtube w7Ft2ymGmfc >}}
+### 图片懒加载
+{{< img src="/img/head-portrait.jpg" alt="头像" caption="示例图片" >}}
 
+### Bilibili 视频
 {{< bilibili BV1e44y1i7Kt >}}
+
+### YouTube 视频
+{{< youtube w7Ft2ymGmfc >}}
