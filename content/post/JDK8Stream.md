@@ -1,5 +1,5 @@
 +++
-tags = ["java"]
+tags = ["Java"]
 date = "2020-02-04"
 title = "JDK8 Stream"
 +++

@@ -44,8 +44,6 @@ New posts are created in `content/post/` using the archetype template at `themes
 title = "Post Title"
 date = 2025-12-13
 tags = ["tag1", "tag2"]
-## categories = ["category"]
-## draft = true
 +++
 **Brief description**
 <!--more-->
@@ -63,11 +61,14 @@ Files matching these patterns are not processed by Hugo (see config.toml):
 ## Repository Structure
 
 - **content/post/** - Blog post markdown files
-- **themes/yelee/** - Hugo theme files (do not modify directly)
+- **themes/yelee/** - Hugo theme files (override with project-level layouts)
+- **layouts/** - Custom layout overrides
+- **archetypes/** - Custom post templates
 - **config.toml** - Hugo site configuration
-- **hugo.exe** - Local Hugo binary (Windows)
+- **hugo.exe** - Local Hugo binary (Windows, not tracked by git in future)
 - **public/** - Generated static site (not committed, created by build)
 - **.github/workflows/action.yml** - GitHub Actions deployment workflow
+- **dev.bat / build.bat** - Convenience scripts for development and building
 
 ## Deployment
 
