@@ -23,13 +23,26 @@ Stream.iterate(2, i -> i * 2); //生成2的N次方数据
 ### peek() 元素调整
 对元素内部数据进行调整
 ```java
-
-
+List<Employee> empList = Arrays.asList(
+    new Employee(1, "Jeff", 100000.0),
+    new Employee(2, "Bill", 200000.0)
+);
+// 使用 peek 给所有员工加薪
+empList.stream()
+    .peek(e -> e.setSalary(e.getSalary() * 1.1))
+    .forEach(System.out::println);
 ```
 ### map() 映射转换
 将元素本身进行加工或类型转换
 ```java
-
+// 提取员工姓名
+List<String> names = empList.stream()
+    .map(Employee::getName)
+    .collect(Collectors.toList());
+// 将字符串转为大写
+List<String> upper = Arrays.asList("a", "b", "c").stream()
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
 ```
 ### flatMap() 展平结果
 将多级结构转换为平铺结构
@@ -52,7 +65,10 @@ public void whenFlatMapEmployeeNames_thenGetNameStream() {
 ```
 ### filter 过滤
 ```java
-
+// 过滤工资大于 150000 的员工
+List<Employee> highSalary = empList.stream()
+    .filter(e -> e.getSalary() > 150000)
+    .collect(Collectors.toList());
 ```
 ### skip() 跳过
 
@@ -75,11 +91,23 @@ public void whenLimitInfiniteStream_thenGetFiniteElements() {
 ```
 ### sorted() 排序
 ```java
-
+// 按工资排序
+List<Employee> sorted = empList.stream()
+    .sorted(Comparator.comparing(Employee::getSalary))
+    .collect(Collectors.toList());
+// 逆序排序
+List<Employee> reversed = empList.stream()
+    .sorted(Comparator.comparing(Employee::getSalary).reversed())
+    .collect(Collectors.toList());
 ```
 ### distinct() 去重
 ```java
-
+// 去除重复元素
+List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 3, 4);
+List<Integer> distinct = numbers.stream()
+    .distinct()
+    .collect(Collectors.toList());
+// [1, 2, 3, 4]
 ```
 ### match() 匹配判定
 #### allMatch() 全部符合
@@ -129,7 +157,10 @@ public void whenParallelStream_thenPerformOperationsInParallel() {
 ### forEach()
 替代for循环
 ```java
-
+// 遍历打印
+empList.stream().forEach(System.out::println);
+// 或使用 lambda
+empList.stream().forEach(e -> System.out.println(e.getName()));
 ```
 ### findFirst() 获取首个
 ```java
@@ -255,23 +286,42 @@ public void whenStreamGroupingAndReducing_thenGetMap() {
 
 ### toArray() 转换为数组
 ```java
-
+// Stream 转数组
+String[] array = Stream.of("a", "b", "c").toArray(String[]::new);
+Employee[] empArray = empList.stream().toArray(Employee[]::new);
 ```
 ### count() 统计总量
 ```java
-
+// 统计元素个数
+long count = empList.stream().count();
+// 统计符合条件的个数
+long highSalaryCount = empList.stream()
+    .filter(e -> e.getSalary() > 150000)
+    .count();
 ```
 ### max() 最大值
 ```java
-
+// 获取最大工资
+Optional<Double> maxSalary = empList.stream()
+    .map(Employee::getSalary)
+    .max(Double::compare);
+// 获取工资最高的员工
+Optional<Employee> topEmployee = empList.stream()
+    .max(Comparator.comparing(Employee::getSalary));
 ```
 ### min() 最小值
 ```java
-
+// 获取最小工资
+Optional<Double> minSalary = empList.stream()
+    .map(Employee::getSalary)
+    .min(Double::compare);
 ```
 ### average() 平均数
 ```java
-
+// 计算平均工资
+OptionalDouble avgSalary = empList.stream()
+    .mapToDouble(Employee::getSalary)
+    .average();
 ```
 ### reduce() 自定义聚集结果
 ```java
