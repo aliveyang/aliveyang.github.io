@@ -162,7 +162,7 @@ jobs:
 ## Shortcode 测试
 
 ### 音乐播放器
-{{< music "music.163.com/outchain/player?type=2&id=1387564796&auto=1&height=66" left >}}
+{{< music "music.163.com/outchain/player?type=2&id=1387564796&auto=1&height=66" >}}
 
 ### 图片懒加载
 {{< img src="/img/head-portrait.jpg" alt="头像" caption="示例图片" >}}
