@@ -157,7 +157,7 @@ jobs:
 
 使用懒加载 shortcode
 ```markdown
-{{< img src="/images/photo.jpg" alt="描述" caption="说明" >}}
+{{< img src="/img/head-portrait.jpg" alt="描述" caption="说明" >}}
 ```
 
 ## 主题 Shortcodes
@@ -172,21 +172,10 @@ jobs:
 # 视频
 {{< video "www.youtube.com/embed/VIDEO_ID" >}}
 
-# Bilibili
-{{< bilibili BV_ID >}}
+# Bilibili（支持 BV 号和 aid）
+{{< bilibili BV1e44y1i7Kt >}}
+{{< bilibili 648902166 >}}
 ```
-
-## 性能优化
-
-已启用的优化：
-- JavaScript 延迟加载（defer）
-- CDN 加速（jQuery、Font Awesome）
-- HTML/CSS/JS 压缩
-- 图片懒加载
-- 资源预加载
-- 缓存策略
-
-详见 `PERFORMANCE.md`
 
 ## 参考
 - [Hugo 官方文档](https://gohugo.io/documentation/)
@@ -200,4 +189,4 @@ jobs:
 
 {{< youtube w7Ft2ymGmfc >}}
 
-{{< bilibili 648902166 >}}
+{{< bilibili BV1e44y1i7Kt >}}
