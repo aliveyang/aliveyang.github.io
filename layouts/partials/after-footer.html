@@ -1,0 +1,48 @@
+
+<!-- JavaScript 文件 - 使用 defer 延迟加载 -->
+{{ if $.Site.Params.use_cdn }}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js" defer></script>
+{{ else }}
+<script src="/js/3.6.3_jquery.min.js" defer></script>
+{{ end }}
+
+<script src="/js/2.3.6_require.min.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+<!-- 代码高亮 - 延迟加载 -->
+<script src="/highlight/highlight.pack.js" defer></script>
+<script>
+  // 确保在 DOM 加载完成后初始化高亮
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+      }
+    });
+  } else {
+    if (typeof hljs !== 'undefined') {
+      hljs.highlightAll();
+    }
+  }
+</script>
+
+{{partial "background.html" .}}
+{{partial "google-analytics.html" .}}
+
+{{ if $.Site.Params.mathjax }}
+    {{partial "mathjax.html" .}}
+{{ end }}
+
+{{partial "scrolling-button.html" .}}
+
+{{ if $.Site.Params.jquery_ui }}
+<!--<script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js" defer></script>-->
+{{ end }}
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>

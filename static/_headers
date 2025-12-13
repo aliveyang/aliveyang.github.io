@@ -1,0 +1,19 @@
+# 缓存策略 - 适用于 Netlify, Vercel 等平台
+
+# 静态资源 - 长期缓存
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/font-awesome/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML 文件 - 短期缓存
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 首页 - 不缓存
+/
+  Cache-Control: no-cache, no-store, must-revalidate

@@ -1,33 +1,35 @@
-name: github pages # 名字自取
+name: Deploy Hugo Site
 
 on:
   push:
     branches:
-      - dev  # 这里的意思是当 main分支发生push的时候，运行下面的jobs，这里先改为github-actions
+      - dev  # 当 dev 分支发生 push 时触发
+  workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
-  deploy: # 任务名自取
-    runs-on: ubuntu-latest	# 在什么环境运行任务
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2	# 引用actions/checkout这个action，与所在的github仓库同名
+      - name: Checkout
+        uses: actions/checkout@v4  # 更新到 v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive) 获取submodule主题
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true  # 获取 Hugo 主题 submodules
+          fetch-depth: 0    # 获取完整历史记录用于 .GitInfo 和 .Lastmod
 
-      - name: Setup Hugo	# 步骤名自取
-        uses: peaceiris/actions-hugo@v2	# hugo官方提供的action，用于在任务环境中获取hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3  # 更新到 v3
         with:
-          hugo-version: 'latest'	# 获取最新版本的hugo
-          # extended: true
+          hugo-version: 'latest'
 
       - name: Build
-        run: hugo --minify	# 使用hugo构建静态网页
+        run: hugo --minify  # 构建并压缩静态文件
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3	# 一个自动发布github pages的action
+        uses: peaceiris/actions-gh-pages@v4  # 更新到 v4
         with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }} 该项适用于发布到源码相同repo的情况，不能用于发布到其他repo
-          external_repository: aliveyang/aliveyang.github.io	# 发布到哪个repo
-          personal_token: ${{ secrets.MY_BLOG_ACTION_PAGE }}	# 发布到其他repo需要提供上面生成的personal access token
-          publish_dir: ./public	# 注意这里指的是要发布哪个文件夹的内容，而不是指发布到目的仓库的什么位置，因为hugo默认生成静态网页到public文件夹，所以这里发布public文件夹里的内容
-          publish_branch: main	# 发布到哪个branch
+          external_repository: aliveyang/aliveyang.github.io  # 目标仓库
+          personal_token: ${{ secrets.MY_BLOG_ACTION_PAGE }}  # Personal Access Token
+          publish_dir: ./public  # 发布目录
+          publish_branch: main  # 发布到 main 分支
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

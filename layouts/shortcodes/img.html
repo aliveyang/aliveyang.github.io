@@ -1,0 +1,20 @@
+{{/* 优化的图片 shortcode，支持懒加载和响应式图片 */}}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $caption := .Get "caption" | default "" }}
+{{ $class := .Get "class" | default "" }}
+{{ $loading := .Get "loading" | default "lazy" }}
+
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  <img
+    src="{{ $src | relURL }}"
+    alt="{{ $alt }}"
+    loading="{{ $loading }}"
+    {{ if $.Site.Params.lazy_load_images }}
+    decoding="async"
+    {{ end }}
+  >
+  {{ with $caption }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{ end }}
+</figure>

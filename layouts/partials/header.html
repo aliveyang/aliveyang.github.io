@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- DNS 预解析和预连接 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <script>
+        var yiliaConfig = {
+            fancybox: {{ $.Site.Params.fancybox}},
+            animate: {{ $.Site.Params.animate}},
+            isHome: false,
+            isPost: false,
+            isArchive: true,
+            isTag: false,
+            isCategory: false,
+            open_in_new: {{ $.Site.Params.open_in_new}},
+            rootUrl: "{{ $.Site.Params.root_url}}"
+        };
+    </script>
+
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="/favicon.png">
+
+    <!-- 预加载关键 CSS -->
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="/font-awesome/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- CSS 样式表 -->
+    <link rel="stylesheet" href="/css/style.css">
+    {{ if $.Site.Params.use_cdn }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    {{ else }}
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    {{ end }}
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="/highlight/styles/intellij-light.min.css">
+
+    <!-- 移除同步加载的 JS，改为在页面底部异步加载 -->
+</head>
+<body>
+

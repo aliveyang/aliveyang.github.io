@@ -1,8 +1,54 @@
 baseURL = "https://aliveyang.github.io/"
-languageCode = "en-us"
+languageCode = "zh-CN"
 title = "alive yang"
-theme="yelee"
-#disqusShortname = "aliveyang"
+theme = "yelee"
+
 [services.disqus]
 shortname = "aliveyang"
-ignoreFiles = ["draft.md", "private.md", "我的模板.md"]
+
+[params]
+  description = "alive yang's blog"
+  author = "alive yang"
+  # 启用 CDN 加速
+  use_cdn = true
+  # 图片懒加载
+  lazy_load_images = true
+
+# Ignore files matching these patterns
+ignoreFiles = ["draft\\.md$", "private\\.md$", "我的模板\\.md$"]
+
+# Build configuration
+[build]
+  writeStats = true
+  useResourceCacheWhen = "always"
+
+# 资源压缩配置
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+      keepEndTags = true
+    [minify.tdewolff.css]
+      keepCSS2 = false
+      precision = 1
+    [minify.tdewolff.js]
+      keepVarNames = false
+      precision = 1
+
+# 图片处理配置
+[imaging]
+  quality = 85
+  resampleFilter = "lanczos"
+  anchor = "smart"
+
+# 缓存配置
+[caches]
+  [caches.assets]
+    dir = ":resourceDir/_gen"
+    maxAge = "24h"
+  [caches.images]
+    dir = ":resourceDir/_gen"
+    maxAge = "24h"
+  [caches.getjson]
+    dir = ":cacheDir/:project"
+    maxAge = "24h"
