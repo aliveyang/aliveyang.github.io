@@ -43,8 +43,9 @@ title = "Windows App"
 - [FileConverter](https://github.com/Tichau/FileConverter) - 格式转换
 
 ### 网络工具
-- [v2rayN](https://github.com/2dust/v2rayN) - 代理客户端
-- [Clash Verge](https://github.com/zzzgydi/clash-verge) - Clash 客户端
+- [v2rayN](https://github.com/2dust/v2rayN) - v2rayN 代理客户端
+- [Clash Verge](https://github.com/zzzgydi/clash-verge) - Clash 代理客户端
+- [Proxifier](https://www.proxifier.com/) - 网络应用程序细分代理
 
 ### 多媒体
 - [MusicFree Desktop](https://github.com/maotoumao/MusicFreeDesktop) - 音乐播放器
