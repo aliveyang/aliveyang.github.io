@@ -67,7 +67,7 @@ title = "常用应用"
 ### 工具
 - [创建快捷方式](https://pan.baidu.com/s/1-LgnHBtdmvEH2KS0fLzFAQ?pwd=a7s8)
 - [c001apk](https://github.com/bggRGjQaUbCoE/c001apk) - 酷安第三方
-<<<<<<< HEAD:aliveyang/Yang/博客/ApplicationNotes.md
+
 ## IKBC WIN被锁
 
 **1. 适用型号：** C系列（含侧刻）、R系列（R300/R310）、F系列（F87/108/200/210）、高达系列、S200
@@ -80,6 +80,4 @@ title = "常用应用"
 **3. 适用型号：** C系列（旧版）
    - **锁定：** **Fn + F12**
    - **解锁：** **Fn + PrtSc**
-=======
 
->>>>>>> origin/master:aliveyang/Yang/博客/Apps.md
