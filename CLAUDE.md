@@ -98,9 +98,24 @@ Key configuration in `config.toml`:
 - **baseURL**: `https://aliveyang.github.io/`
 - **title**: "alive yang"
 - **theme**: "yelee"
-- **disqusShortname**: "aliveyang" (for comments)
 - **use_cdn**: `true` (enables CDN for jQuery and Font Awesome)
 - **lazy_load_images**: `true` (enables image lazy loading)
+
+### Comment System
+
+The site uses **Giscus** (GitHub Discussions-based) for comments. See `GISCUS_SETUP.md` for setup instructions.
+
+Configuration in `config.toml`:
+```toml
+[params.giscus]
+  enable = true
+  repo = "aliveyang/aliveyang.github.io"
+  repoId = "..."  # Get from https://giscus.app/zh-CN
+  category = "Announcements"
+  categoryId = "..."  # Get from https://giscus.app/zh-CN
+```
+
+To disable comments globally, set `enable = false`. To disable for a specific post, add `comments = false` to the post's front matter.
 
 ## Performance Optimizations
 
