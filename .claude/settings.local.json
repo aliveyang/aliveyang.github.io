@@ -5,7 +5,8 @@
       "Bash(hugo:*)",
       "Bash(./hugo.exe:*)",
       "Bash(cat:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
