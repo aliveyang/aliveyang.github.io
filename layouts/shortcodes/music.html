@@ -1,14 +1,14 @@
-{{- $src := index .Params 0 -}}
-{{- $align := .Get 1 | default "center" -}}
-<div style="clear: both; margin: 20px 0; text-align: {{ $align }};">
-    <iframe
-        src="//{{ $src }}"
-        frameborder="no"
-        border="0"
-        marginwidth="0"
-        marginheight="0"
-        width="330"
-        height="86"
-        style="display: inline-block;">
+<div style="clear: both; margin: 20px 0; text-align: {{ if eq (index .Params 1) "right" }}right{{ else if eq (index .Params 1) "left" }}left{{ else }}center{{ end }};">
+    <iframe id="musicAd"
+            src="//{{ index .Params 0 }}"
+            frameborder="no"
+            border="0"
+            marginwidth="0"
+            marginheight="0"
+            width="330"
+            height="86"
+            style="display: inline-block; max-width: 100%;">
     </iframe>
 </div>
+
+
