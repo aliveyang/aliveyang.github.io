@@ -1,4 +1,21 @@
 
+<!-- 代码高亮 - 延迟加载 -->
+<script src="/highlight/highlight.pack.js" defer></script>
+<script>
+  // 确保在 DOM 加载完成后初始化高亮
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof hljs !== 'undefined') {
+        hljs.initHighlighting();
+      }
+    });
+  } else {
+    if (typeof hljs !== 'undefined') {
+      hljs.initHighlighting();
+    }
+  }
+</script>
+
 <!-- JavaScript 文件 - 使用 defer 延迟加载 -->
 {{ if $.Site.Params.use_cdn }}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js" defer></script>
@@ -8,23 +25,6 @@
 
 <script src="/js/2.3.6_require.min.js" defer></script>
 <script src="/js/main.js" defer></script>
-
-<!-- 代码高亮 - 延迟加载 -->
-<script src="/highlight/highlight.pack.js" defer></script>
-<script>
-  // 确保在 DOM 加载完成后初始化高亮
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof hljs !== 'undefined') {
-        hljs.highlightAll();
-      }
-    });
-  } else {
-    if (typeof hljs !== 'undefined') {
-      hljs.highlightAll();
-    }
-  }
-</script>
 
 {{partial "background.html" .}}
 {{partial "google-analytics.html" .}}

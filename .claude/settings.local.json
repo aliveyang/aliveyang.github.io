@@ -6,7 +6,11 @@
       "Bash(./hugo.exe:*)",
       "Bash(cat:*)",
       "Bash(git add:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(grep:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: 迁移评论系统到 Giscus 并完善项目文档\n\n## 评论系统升级\n- 从 Disqus 迁移到 Giscus \\(基于 GitHub Discussions\\)\n- 添加 Giscus 配置到 config.toml\n- 创建 Giscus 评论组件 layouts/partials/giscus.html\n- 更新文章模板集成评论功能\n- 支持单篇文章禁用评论\n\n## 文档完善\n- 创建详细的 README.md \\(1240 行\\)\n  - Hugo 安装指南 \\(Windows/macOS/Linux\\)\n  - 完整的内容管理教程\n  - Front Matter 字段详解\n  - Markdown 语法指南\n  - Shortcodes 使用说明\n  - 详细的部署流程和 GitHub Actions 配置\n  - Git Commit 规范\n  - 开发工作流和便利脚本\n  - 主题定制和性能优化指南\n  \n- 创建 GISCUS_SETUP.md 配置指南\n  - Giscus 特性介绍\n  - 详细的配置步骤\n  - 故障排查指南\n  - 与 Disqus 对比\n\n- 更新 CLAUDE.md 项目文档\n  - 添加评论系统说明\n  - 更新配置示例\n\n## Giscus 配置\n- Repo: aliveyang/aliveyang.github.io\n- Category: Announcements\n- Mapping: pathname\n- Theme: preferred_color_scheme\n- Language: zh-CN\n- Input Position: top\n- Loading: lazy\n\n🤖 Generated with Claude Code\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

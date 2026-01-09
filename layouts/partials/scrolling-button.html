@@ -4,8 +4,10 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // 确保两个按钮都显示
-        $("#scroll > a").show();
+        if (typeof $ !== 'undefined') {
+            $("#scroll > a").show();
+        }
     });
 </script>
